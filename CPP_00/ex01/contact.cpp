@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:32:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 19:42:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 20:24:50 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	Contact::create_contact(int index)
 	this->set_index(index);
 }
 
-int	check_str(std::string s)
+int	check_str(string s)
 {
 
 	for (size_t i = 0; i < s.size(); i++)
@@ -59,13 +59,13 @@ int	check_str(std::string s)
 
 void	Contact::set_firstname()
 {
-	std::string str;
+	string str;
 
 	while (str.empty() || check_str(str))
 	{
-		std::cout << "New contact First Name : ";
-		std::getline(std::cin, str);
-		if (std::cin.eof())
+		cout << "New contact First Name : ";
+		getline(cin, str);
+		if (cin.eof())
 			exit(0);
 	}
 	this->first_name = str;
@@ -73,13 +73,13 @@ void	Contact::set_firstname()
 
 void	Contact::set_lastname()
 {
-	std::string str;
+	string str;
 
 	while (str.empty() || check_str(str))
 	{
-		std::cout << "New contact Last Name : ";
-		std::getline(std::cin, str);
-		if (std::cin.eof())
+		cout << "New contact Last Name : ";
+		getline(cin, str);
+		if (cin.eof())
 			exit(0);
 	}
 	this->last_name = str;
@@ -87,13 +87,13 @@ void	Contact::set_lastname()
 
 void	Contact::set_nickname()
 {
-	std::string str;
+	string str;
 
 	while (str.empty() || check_str(str))
 	{
-		std::cout << "New contact nick name : ";
-		std::getline(std::cin, str);
-		if (std::cin.eof())
+		cout << "New contact nick name : ";
+		getline(cin, str);
+		if (cin.eof())
 			exit(0);
 	}
 	this->nick_name = str;
@@ -101,13 +101,13 @@ void	Contact::set_nickname()
 
 void	Contact::set_phonenumber()
 {
-	std::string str;
+	string str;
 
 	while (str.empty() || check_str(str))
 	{
-		std::cout << "New contact phone number : ";
-		std::getline(std::cin, str);
-		if (std::cin.eof())
+		cout << "New contact phone number : ";
+		getline(cin, str);
+		if (cin.eof())
 			exit(0);
 	}
 	this->phone_number = str;
@@ -115,13 +115,13 @@ void	Contact::set_phonenumber()
 
 void	Contact::set_darkestsecret()
 {
-	std::string str;
+	string str;
 
 	while (str.empty() || check_str(str))
 	{
-		std::cout << "New contact darkest secret: ";
-		std::getline(std::cin, str);
-		if (std::cin.eof())
+		cout << "New contact darkest secret: ";
+		getline(cin, str);
+		if (cin.eof())
 			exit(0);
 	}
 	this->darkest_secret = str;
@@ -132,27 +132,27 @@ void	Contact::set_index(int index)
 	this->index = index;
 }
 
-std::string	Contact::get_firstname()
+string	Contact::get_firstname()
 {
 	return (this->first_name);
 }
 
-std::string	Contact::get_lastname()
+string	Contact::get_lastname()
 {
 	return (this->last_name);
 }
 
-std::string	Contact::get_nickname()
+string	Contact::get_nickname()
 {
 	return (this->nick_name);
 }
 
-std::string	Contact::get_phonenumber()
+string	Contact::get_phonenumber()
 {
 	return (this->phone_number);
 }
 
-std::string	Contact::get_darkestsecret()
+string	Contact::get_darkestsecret()
 {
 	return (this->darkest_secret);
 }
@@ -160,4 +160,47 @@ std::string	Contact::get_darkestsecret()
 int	Contact::get_index()
 {
 	return (this->index);
+}
+
+void	contact_header()
+{
+	cout << "---------------------------------------------" << endl;
+	cout << "|     Index|First Name| Last Name| Nick Name|" << endl;
+	cout << "|----------|----------|----------|----------|" << endl;
+}
+
+void	Contact::display_contact()
+{
+	int	i;
+
+	cout << "|";
+	for (i = 0; i < 9; i++)
+		cout << " ";
+	cout << this->index + 1 << "|";
+	if (this->first_name.size() > 10)
+		cout << this->first_name.substr(0, 9) << "." << "|";
+	else
+	{
+		for (i = 0 + this->first_name.size(); i < 10; i++)
+			cout << " ";
+		cout << this->first_name << "|";
+	}
+
+	if (this->last_name.size() > 10)
+		cout << this->last_name.substr(0, 9) << "." << "|";
+	else
+	{
+		for (i = 0 + this->last_name.size(); i < 10; i++)
+			cout << " ";
+		cout << this->last_name << "|";
+	}
+	if (this->nick_name.size() > 10)
+		cout << this->nick_name.substr(0, 9) << "." << "|";
+	else
+	{
+		for (i = 0 + this->nick_name.size(); i < 10; i++)
+			cout << " ";
+		cout << this->nick_name << "|";
+	}
+	cout << endl;
 }

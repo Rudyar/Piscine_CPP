@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:25 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 19:43:12 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 20:26:46 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,16 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::display_contacts()
 {
-	for (size_t i = 0; i < 8; i++)
+	int	i;
+
+	contact_header();
+	for (i = 0; i < 8; i++)
 	{
-		std::cout << "Index : " << this->contact[i].get_index();
-		std::cout << " | ";
-		std::cout << "First Name : " << this->contact[i].get_firstname();
-		std::cout << " | ";
-		std::cout << "Last Name : " << this->contact[i].get_lastname();
-		std::cout << " | ";
-		std::cout << "Nick Name : " << this->contact[i].get_nickname();
-		std::cout << " | ";
-		std::cout << "Phone Number: " << this->contact[i].get_phonenumber();
-		std::cout << " | ";
-		std::cout << "Darkest secret : " << this->contact[i].get_darkestsecret() << std::endl;
+		this->contact[i].display_contact();
+		if (i < 7)
+			cout << "|----------|----------|----------|----------|" << endl;
+		else
+			cout << "---------------------------------------------" << endl;
 	}
 }
 
@@ -43,7 +40,6 @@ void	PhoneBook::test()
 {
 	for (size_t i = 0; i < 8; i++)
 		this->contact[i].random_create(i);
-
 }
 
 void	PhoneBook::add_contact()

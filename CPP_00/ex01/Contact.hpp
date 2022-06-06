@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 19:43:32 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 20:25:18 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+using namespace std;
 
 class Contact
 {
@@ -37,6 +38,7 @@ class Contact
 		void		set_phonenumber();
 		void		set_darkestsecret();
 		void		set_index(int index);
+		void		display_contact();
 		int			get_index();
 		std::string	get_firstname();
 		std::string	get_lastname();
@@ -44,5 +46,7 @@ class Contact
 		std::string	get_phonenumber();
 		std::string	get_darkestsecret();
 };
+
+void	contact_header();
 
 #endif

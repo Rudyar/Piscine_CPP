@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:38:23 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 19:24:39 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 20:14:46 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ int	main(void)
 		if (input == "ADD")
 			phone_book.add_contact();
 		else if (input == "SEARCH")
-		{
-			cout << "SEARCH in contact list" << endl;
 			phone_book.display_contacts();
-		}
 	}
 	cout << "Ciao" << endl;
 	return (0);
