@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 18:42:41 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 19:43:32 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 class Contact
 {
@@ -36,12 +37,12 @@ class Contact
 		void		set_phonenumber();
 		void		set_darkestsecret();
 		void		set_index(int index);
+		int			get_index();
 		std::string	get_firstname();
 		std::string	get_lastname();
 		std::string	get_nickname();
 		std::string	get_phonenumber();
 		std::string	get_darkestsecret();
-		int			get_index();
 };
 
 #endif

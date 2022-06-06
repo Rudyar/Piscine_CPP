@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:31 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 18:39:51 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 19:33:55 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include "Contact.hpp"
 
 class PhoneBook

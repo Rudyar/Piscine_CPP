@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:32:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 18:42:28 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 19:42:44 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,9 @@ void	Contact::set_firstname()
 		std::cout << "New contact First Name : ";
 		std::getline(std::cin, str);
 		if (std::cin.eof())
-			return ;
+			exit(0);
 	}
 	this->first_name = str;
-	// Mettre des conditions de tests !
 }
 
 void	Contact::set_lastname()
@@ -81,10 +80,9 @@ void	Contact::set_lastname()
 		std::cout << "New contact Last Name : ";
 		std::getline(std::cin, str);
 		if (std::cin.eof())
-			return ;
+			exit(0);
 	}
 	this->last_name = str;
-	// Mettre des conditions de tests !
 }
 
 void	Contact::set_nickname()
@@ -96,10 +94,9 @@ void	Contact::set_nickname()
 		std::cout << "New contact nick name : ";
 		std::getline(std::cin, str);
 		if (std::cin.eof())
-			return ;
+			exit(0);
 	}
 	this->nick_name = str;
-	// Mettre des conditions de tests !
 }
 
 void	Contact::set_phonenumber()
@@ -111,10 +108,9 @@ void	Contact::set_phonenumber()
 		std::cout << "New contact phone number : ";
 		std::getline(std::cin, str);
 		if (std::cin.eof())
-			return ;
+			exit(0);
 	}
 	this->phone_number = str;
-	// Mettre des conditions de tests !
 }
 
 void	Contact::set_darkestsecret()
@@ -126,16 +122,14 @@ void	Contact::set_darkestsecret()
 		std::cout << "New contact darkest secret: ";
 		std::getline(std::cin, str);
 		if (std::cin.eof())
-			return ;
+			exit(0);
 	}
 	this->darkest_secret = str;
-	// Mettre des conditions de tests !
 }
 
 void	Contact::set_index(int index)
 {
 	this->index = index;
-	// Mettre des conditions de tests !
 }
 
 std::string	Contact::get_firstname()

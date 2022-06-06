@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:25 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 19:07:29 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/06 19:43:12 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,10 @@ void	PhoneBook::add_contact()
 {
 	int	i = 0;
 
+	std::cout << "ADD to phonebook" << std::endl;
 	for (i = 0; i < 8; i++)
-	{
 		if (this->contact[i].get_firstname().empty())
-		{
-			this->contact[i].create_contact(i);
-			return ;
-		}
-	}
+			break ;
 	if (i >= 8)
 	{
 		std::cout << "Phone Book is full, first contact will be deleted" << std::endl;
@@ -66,6 +62,7 @@ void	PhoneBook::add_contact()
 			this->contact[j] = this->contact[j + 1];
 			this->contact[j].set_index(j);
 		}
-		this->contact[7].create_contact(7);
+		i = 7;
 	}
+	this->contact[i].create_contact(i);
 }
