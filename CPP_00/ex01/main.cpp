@@ -6,20 +6,19 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:38:23 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 20:14:46 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/07 15:27:41 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
 #include "PhoneBook.hpp"
-using namespace std;
 
 int	main(void)
 {
 	PhoneBook	phone_book;
 	string		input;
 
-	cout << "WELCOME TO AWESOME PHONEBOOK" << endl << endl;
+	cout << endl << "WELCOME TO AWESOME PHONEBOOK" << endl << endl;
+	// A SUPPRIMER
 	phone_book.test();
 	while (input != "EXIT")
 	{
@@ -32,6 +31,6 @@ int	main(void)
 		else if (input == "SEARCH")
 			phone_book.display_contacts();
 	}
-	cout << "Ciao" << endl;
+	cout << "Bye bye" << endl;
 	return (0);
 }
