@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:25 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/07 15:41:51 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/07 16:25:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ PhoneBook::PhoneBook()
 
 PhoneBook::~PhoneBook()
 {
-}
-
-// A SUPPRIMER
-void	PhoneBook::test()
-{
-	for (size_t i = 0; i < 4; i++)
-		this->contact[i].random_create(i);
 }
 
 int	PhoneBook::nb_contacts()
@@ -50,9 +43,10 @@ void	PhoneBook::display_contacts()
 	check_name = this->contact[0].get_firstname();
 	if (check_name.empty())
 	{
-		cout << "Phone Book is empty, you can create a new contact" << endl;
+		cout << YELLOW << "Phone Book is empty, you can create a new contact" << RES << endl;
 		return ;
 	}
+	cout << CYAN << "==== Search contact in Phone Book ====" << RES << endl;
 	contact_header();
 	for (i = 0; i < nb_contacts(); i++)
 	{
@@ -72,7 +66,7 @@ void	PhoneBook::search_contact()
 
 	while (input.empty() || n > nb_contacts() || n < 1)
 	{
-		cout << "Enter contact's index (from 1 to 8) to see all his details\n> ";
+		cout << YELLOW << "Enter contact's index (from 1 to " << nb_contacts() << ") to see all his details\n> " << RES;
 		getline(cin, input);
 		if (cin.eof())
 			exit(0);
@@ -82,9 +76,9 @@ void	PhoneBook::search_contact()
 			if (n < nb_contacts() && n > 0)
 				break ;
 		}
-		cout << "Wrong index" << endl;
+		cout << RED << "Wrong index" << RES << endl;
 	}
-	cout << "Here, all details of the contact" << endl;
+	cout << GREEN << "=== Here, all details of the contact ====" << RES << endl;
 	contact_header();
 
 	this->contact[n - 1].display_contact();
@@ -93,15 +87,13 @@ void	PhoneBook::search_contact()
 
 void	PhoneBook::add_contact()
 {
-	int	i = 0;
+	int	i;
 
-	std::cout << "Add a new contact to the Phone Book" << std::endl;
-	for (i = 0; i < 8; i++)
-		if (this->contact[i].get_firstname().empty())
-			break ;
+	cout << CYAN << "==== Add a new contact to Phone Book ====" << RES << endl;
+	i = nb_contacts();
 	if (i >= 8)
 	{
-		std::cout << "Phone Book is full, oldest contact will be replaced by the new one" << std::endl;
+		cout << YELLOW << "Phone Book is full, oldest contact will be replaced by the new one" << RES << endl;
 		for (size_t j = 0; j < 7; j++)
 		{
 			this->contact[j] = this->contact[j + 1];
@@ -110,4 +102,5 @@ void	PhoneBook::add_contact()
 		i = 7;
 	}
 	this->contact[i].create_contact(i);
+	cout << GREEN << "==== Contact created ! ====" << RES << endl;
 }

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/06 20:25:18 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/07 16:07:43 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 #include <string>
 #include <stdlib.h>
 using namespace std;
+
+# define RES "\e[0m"
+# define RED "\e[0;31m"
+# define GREEN "\e[0;32m"
+# define CYAN "\e[0;36m"
+# define YELLOW "\e[0;33m"
+# define MAG "\e[0;35m"
 
 class Contact
 {

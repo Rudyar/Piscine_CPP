@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:32:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/07 15:13:30 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/07 16:15:51 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,10 @@ int	check_str(string s)
 
 	for (size_t i = 0; i < s.size(); i++)
 	{
-		if (s[i] != ' ')
+		if (s[i] != ' ' && s[i] != '\t')
 			return (0);
 	}
-	cout << "Input can't be empty or only whitespaces" << endl;
+	cout << RED << "Input can't be empty or only whitespaces" << RES << endl;
 	return (1);
 }
 
@@ -107,7 +107,7 @@ int	check_phone_number(string s)
 	{
 		if (!isdigit(s[i]) && s[i] != '+')
 		{
-			cout << "Phone Number can be compose only by numbers and '+'" << endl;
+			cout << RED << "Phone Number can be compose only by numbers and '+'" << RES << endl;
 			return (1);
 		}
 	}
