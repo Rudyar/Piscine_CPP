@@ -6,11 +6,12 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:28:27 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/08 13:12:31 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/08 14:38:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <time.h>
 #include "Account.hpp"
 using namespace std;
 
@@ -21,8 +22,14 @@ int Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp( void )
 {
-	cout << "[19920104_091532] ";
+	char		buff[17];
+	time_t		timer;
+	struct tm	*time_info;
 
+	time(&timer);
+	time_info = localtime(&timer);
+	strftime(buff, 17, "%Y%m%d_%H%M%S", time_info);
+	cout << "[" << buff << "] ";
 }
 
 int	Account::getNbAccounts( void )
