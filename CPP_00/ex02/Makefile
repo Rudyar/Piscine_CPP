@@ -6,13 +6,13 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 19:30:25 by arudy             #+#    #+#              #
-#    Updated: 2022/06/07 19:30:41 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/08 11:21:50 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= account
 
-SRCS	= main.cpp phonebook.cpp contact.cpp
+SRCS	= tests.cpp Account.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
