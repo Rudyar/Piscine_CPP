@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:32:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/07 16:15:51 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:46:31 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	check_str(string s)
 		if (s[i] != ' ' && s[i] != '\t')
 			return (0);
 	}
-	cout << RED << "Input can't be empty or only whitespaces" << RES << endl;
+	cout << RED << "Input can't be only whitespaces" << RES << endl;
 	return (1);
 }
 
@@ -124,6 +124,9 @@ void	Contact::set_firstname()
 		getline(cin, str);
 		if (cin.eof())
 			exit(0);
+		if (str.empty())
+			cout << RED << "Input can't be empty" << RES << endl;
+
 	}
 	this->first_name = str;
 }
@@ -138,6 +141,8 @@ void	Contact::set_lastname()
 		getline(cin, str);
 		if (cin.eof())
 			exit(0);
+		if (str.empty())
+			cout << RED << "Input can't be empty" << RES << endl;
 	}
 	this->last_name = str;
 }
@@ -152,6 +157,8 @@ void	Contact::set_nickname()
 		getline(cin, str);
 		if (cin.eof())
 			exit(0);
+		if (str.empty())
+			cout << RED << "Input can't be empty" << RES << endl;
 	}
 	this->nick_name = str;
 }
@@ -166,6 +173,8 @@ void	Contact::set_phonenumber()
 		getline(cin, str);
 		if (cin.eof())
 			exit(0);
+		if (str.empty())
+			cout << RED << "Input can't be empty" << RES << endl;
 	}
 	this->phone_number = str;
 }
@@ -180,6 +189,8 @@ void	Contact::set_darkestsecret()
 		getline(cin, str);
 		if (cin.eof())
 			exit(0);
+		if (str.empty())
+			cout << RED << "Input can't be empty" << RES << endl;
 	}
 	this->darkest_secret = str;
 }
