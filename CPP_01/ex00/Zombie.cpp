@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:39 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 12:27:21 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:12:06 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ Zombie::Zombie(string name)
 Zombie::~Zombie()
 {
 	cout << this->_name << ": Is dead by daylight" << endl;
-	// delete...
 }

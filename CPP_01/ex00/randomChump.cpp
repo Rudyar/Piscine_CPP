@@ -6,8 +6,13 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:36 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 12:30:02 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/09 14:50:19 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+void	randomChump(string name)
+{
+	Zombie new_zombie(name);
+}
