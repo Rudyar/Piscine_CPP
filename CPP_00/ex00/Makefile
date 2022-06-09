@@ -6,7 +6,7 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/06 13:39:03 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/09 09:20:44 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ CC		= c++
 
 RM		= rm -f
 
-# CFLAGS	= -pedantic -Wall -Werror -Wextra -std=c++98
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)

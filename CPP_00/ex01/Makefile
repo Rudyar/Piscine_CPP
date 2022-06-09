@@ -6,13 +6,13 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/06 16:01:47 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/09 09:20:40 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= phonebook
 
-SRCS	= main.cpp phonebook.cpp contact.cpp
+SRCS	= main.cpp PhoneBook.cpp Contact.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -20,7 +20,6 @@ CC		= c++
 
 RM		= rm -f
 
-# CFLAGS	= -pedantic -Wall -Werror -Wextra -std=c++98
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
