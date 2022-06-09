@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:11:23 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 19:41:23 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/09 22:26:41 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,60 +16,55 @@
 #include <stdlib.h>
 using namespace std;
 
-int	check_str(string s)
+void	search_replace(string s1, string s2, ifstream &in, ofstream &out)
 {
-	if (s.empty())
-	{
-		cout << "No empty arg" << endl;
-			return 1;
-	}
-	for (size_t i = 0; i < s.size(); i++)
-		if (s[i] != ' ' && s[i] != '	')
-			return 0;
-	cout << "Arg can't be only whitespaces" << endl;
-	return 1;
-}
+	string	buff;
+	size_t	pos;
 
-void	open_files(string str, ifstream *in, ofstream *out)
-{
-	char	filename[str.size() + 1];
-	// char	outfile_name[str.size() + 1];
-	string	outfile_name;
-
-	str.copy(filename, str.size() + 1);
-	outfile_name = filename;
-	outfile_name += ".replace";
-	in->open(filename);
-	if (in->fail())
+	if (s1.empty())
 	{
-		cout << "Can't open" << filename << endl;
+		cerr << "Can't find an empty string in file..." << endl;
 		exit(1);
 	}
-	out->open(outfile_name);
-	if (out->fail())
+	while(getline(in, buff))
 	{
-		cout << "Can't open" << outfile_name << endl;
-		exit(1);
+		pos = buff.find(s1);
+		while (pos != std::string::npos)
+		{
+			buff.erase(pos, s1.size());
+			buff.insert(pos, s2);
+			pos = buff.find(s1, pos + s2.size());
+		}
+		out << buff << endl;
 	}
 }
 
 int main(int ac, char **av)
 {
-	ifstream	*infile;
-	ofstream	*outfile;
+	ifstream	in(av[1]);
+	ofstream	out;
+	string		outfile_name;
 
 	if (ac != 4)
 	{
-		cout << "Args have to be : ./sed <filename> <s1> < s2>" << endl;
+		cerr << "Args have to be : ./sed <filename> <s1> < s2>" << endl;
 		return 1;
 	}
-	string filename = av[1];
-	string s1 = av[2];
-	string s2 = av[3];
-	if (check_str(filename) || check_str(s1) || check_str(s2))\
+	if (!in)
+	{
+		cerr << "Can't open " << av[1] << endl;
 		return 1;
-	open_files(filename, infile, outfile);
-	infile->close();
-	outfile->close();
+	}
+	outfile_name = av[1];
+	outfile_name += ".replace";
+	out.open(outfile_name.c_str());
+	if (!out)
+	{
+		cerr << "Can't open " << outfile_name << endl;
+		return 1;
+	}
+	search_replace(av[2], av[3], in, out);
+	in.close();
+	out.close();
 	return 0;
 }
