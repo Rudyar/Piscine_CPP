@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:44:38 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 11:16:57 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/12 17:19:31 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ class Fixed
 		float	toFloat(  void ) const;
 		int		toInt( void ) const;
 		static Fixed	&min( Fixed &a, Fixed &b);
-		static Fixed	&min( Fixed const &a, Fixed const &b);
+		static Fixed const	&min( Fixed const &a, Fixed const &b);
 		static Fixed	&max( Fixed &a, Fixed &b);
-		static Fixed	&max( Fixed const &a, Fixed const &b);
+		static Fixed const	&max( Fixed const &a, Fixed const &b);
 };
 
 ostream	&operator<<( ostream &o, Fixed const &n );

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:45:43 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 12:00:23 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/12 17:54:25 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ Fixed	Fixed::operator*( Fixed const &n) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(_raw_bits * (n.getRawBits() >> _bits));
+	tmp.setRawBits(_raw_bits * n.getRawBits() >> _bits);
 	return tmp;
 }
 
@@ -87,7 +87,7 @@ Fixed	Fixed::operator/( Fixed const &n) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(_raw_bits / (n.getRawBits() >> _bits));
+	tmp.setRawBits((_raw_bits << _bits) / n.getRawBits());
 	return tmp;
 }
 
@@ -137,7 +137,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat( void ) const
 {
-	return ((float)_raw_bits / (1 << _bits));
+	return _raw_bits / (float)(1 << _bits);
 }
 
 int	Fixed::toInt( void ) const
@@ -147,22 +147,30 @@ int	Fixed::toInt( void ) const
 
 Fixed	&Fixed::min( Fixed &a, Fixed &b)
 {
-
+	if (a < b)
+		return a;
+	return b;
 }
 
-Fixed	&Fixed::min( Fixed const &a, Fixed const &b)
+Fixed const	&Fixed::min( Fixed const &a, Fixed const &b)
 {
-
+	if (a < b)
+		return a;
+	return b;
 }
 
 Fixed	&Fixed::max( Fixed &a, Fixed &b)
 {
-
+	if (a > b)
+		return a;
+	return b;
 }
 
-Fixed	&Fixed::max( Fixed const &a, Fixed const &b)
+Fixed const	&Fixed::max( Fixed const &a, Fixed const &b)
 {
-
+	if (a > b)
+		return a;
+	return b;
 }
 
 ostream	&operator<<(ostream &o, Fixed const &n)
