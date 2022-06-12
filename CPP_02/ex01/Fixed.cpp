@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:45:43 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/11 18:45:32 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/12 08:31:32 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat( void ) const
 {
-	return 0;
+	return (roundf(_raw_bits) / (1 << _bits));
 }
 
 int	Fixed::toInt( void ) const
 {
-	return 0;
+	return (int)_raw_bits >> _bits;
 }
 
 ostream	&operator<<(ostream &o, Fixed const &n)
@@ -38,7 +38,7 @@ ostream	&operator<<(ostream &o, Fixed const &n)
 	return o;
 }
 
-// ----------- Canonical -----------
+// ----------- Canon -----------
 
 Fixed::Fixed()
 {
@@ -55,7 +55,7 @@ Fixed::Fixed( int const i)
 Fixed::Fixed( float const f)
 {
 	cout << "Float constructor called" << endl;
-	_raw_bits = f;
+	_raw_bits = roundf(f * (1 << _bits));
 }
 
 Fixed::Fixed( Fixed const &src)
