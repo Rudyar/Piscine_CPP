@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:45:43 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 08:31:32 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/12 11:20:34 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat( void ) const
 {
-	return (roundf(_raw_bits) / (1 << _bits));
+	return _raw_bits / (float)(1 << _bits);
 }
 
 int	Fixed::toInt( void ) const

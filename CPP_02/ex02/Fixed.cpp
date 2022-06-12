@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:45:43 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 10:05:51 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/12 12:00:23 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,42 @@
 
 bool	Fixed::operator>( Fixed const &n ) const
 {
-	if (_raw_bits > n._raw_bits)
+	if (_raw_bits > n.getRawBits())
 		return true;
 	return false;
 }
 
 bool	Fixed::operator<( Fixed const &n ) const
 {
-	if (_raw_bits < n._raw_bits)
+	if (_raw_bits < n.getRawBits())
 		return true;
 	return false;
 }
 
 bool	Fixed::operator>=( Fixed const &n ) const
 {
-	if (_raw_bits >= n._raw_bits)
+	if (_raw_bits >= n.getRawBits())
 		return true;
 	return false;
 }
 
 bool	Fixed::operator<=( Fixed const &n ) const
 {
-	if (_raw_bits <= n._raw_bits)
+	if (_raw_bits <= n.getRawBits())
 		return true;
 	return false;
 }
 
 bool	Fixed::operator==( Fixed const &n ) const
 {
-	if (_raw_bits == n._raw_bits)
+	if (_raw_bits == n.getRawBits())
 		return true;
 	return false;
 }
 
 bool	Fixed::operator!=( Fixed const &n ) const
 {
-	if (_raw_bits != n._raw_bits)
+	if (_raw_bits != n.getRawBits())
 		return true;
 	return false;
 }
@@ -63,7 +63,7 @@ Fixed	Fixed::operator+( Fixed const &n) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(_raw_bits + n._raw_bits);
+	tmp.setRawBits(_raw_bits + n.getRawBits());
 	return tmp;
 }
 
@@ -71,7 +71,7 @@ Fixed	Fixed::operator-( Fixed const &n) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(_raw_bits - n._raw_bits);
+	tmp.setRawBits(_raw_bits - n.getRawBits());
 	return tmp;
 }
 
@@ -79,7 +79,7 @@ Fixed	Fixed::operator*( Fixed const &n) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(_raw_bits * n._raw_bits);
+	tmp.setRawBits(_raw_bits * (n.getRawBits() >> _bits));
 	return tmp;
 }
 
@@ -87,7 +87,7 @@ Fixed	Fixed::operator/( Fixed const &n) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(_raw_bits / n._raw_bits);
+	tmp.setRawBits(_raw_bits / (n.getRawBits() >> _bits));
 	return tmp;
 }
 
@@ -137,12 +137,32 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat( void ) const
 {
-	return (roundf(_raw_bits) / (1 << _bits));
+	return ((float)_raw_bits / (1 << _bits));
 }
 
 int	Fixed::toInt( void ) const
 {
 	return (int)_raw_bits >> _bits;
+}
+
+Fixed	&Fixed::min( Fixed &a, Fixed &b)
+{
+
+}
+
+Fixed	&Fixed::min( Fixed const &a, Fixed const &b)
+{
+
+}
+
+Fixed	&Fixed::max( Fixed &a, Fixed &b)
+{
+
+}
+
+Fixed	&Fixed::max( Fixed const &a, Fixed const &b)
+{
+
 }
 
 ostream	&operator<<(ostream &o, Fixed const &n)
@@ -160,12 +180,12 @@ Fixed::Fixed()
 
 Fixed::Fixed( int const i)
 {
-	_raw_bits = i << _bits;
+	_raw_bits = (int)i << _bits;
 }
 
 Fixed::Fixed( float const f)
 {
-	_raw_bits = roundf(f * (1 << _bits));
+	_raw_bits = (int)roundf(f * (1 << _bits));
 }
 
 Fixed::Fixed( Fixed const &src)
