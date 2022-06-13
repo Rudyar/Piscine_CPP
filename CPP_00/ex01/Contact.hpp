@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/07 16:07:43 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/13 19:08:16 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ class Contact
 {
 	private:
 		int			index;
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nick_name;
-		std::string	phone_number;
-		std::string	darkest_secret;
+		string	first_name;
+		string	last_name;
+		string	nick_name;
+		string	phone_number;
+		string	darkest_secret;
 
 	public:
 		Contact();
@@ -47,11 +47,11 @@ class Contact
 		void		set_index(int index);
 		void		display_contact();
 		int			get_index();
-		std::string	get_firstname();
-		std::string	get_lastname();
-		std::string	get_nickname();
-		std::string	get_phonenumber();
-		std::string	get_darkestsecret();
+		string		get_firstname();
+		string		get_lastname();
+		string		get_nickname();
+		string		get_phonenumber();
+		string		get_darkestsecret();
 };
 
 void	contact_header();
