@@ -6,45 +6,45 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:57:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/10 18:40:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:25:44 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-void	Harl::debug( void )
+void	Harl::debug(void)
 {
-	cout << "[ DEBUG ]" << endl;
-	cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-";
-	cout << "ketchup burger. I really do!" << endl << endl;
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-";
+	std::cout << "ketchup burger. I really do!" << std::endl << std::endl;
 }
 
-void	Harl::info( void )
+void	Harl::info(void)
 {
-	cout << "[ INFO ]" << endl;
-	cout << "I cannot believe adding extra bacon costs more money. You didn’t put ";
-	cout << "enough bacon in my burger! If you did, I wouldn’t be asking for more!" << endl << endl;
-
-}
-
-void	Harl::warning( void )
-{
-	cout << "[ WARNING ]" << endl;
-	cout << "I think I deserve to have some extra bacon for free. I’ve been coming for ";
-	cout << "years whereas you started working here since last month." << endl << endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put ";
+	std::cout << "enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl << std::endl;
 
 }
 
-void	Harl::error( void )
+void	Harl::warning(void)
 {
-	cout << "[ ERROR ]" << endl;
-	cout << "This is unacceptable! I want to speak to the manager now." << endl;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for ";
+	std::cout << "years whereas you started working here since last month." << std::endl << std::endl;
+
 }
 
-void	Harl::complain(string level)
+void	Harl::error(void)
+{
+	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void	Harl::complain(std::string level)
 {
 	void	(Harl::*func[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	string list[4] = {
+	std::string list[4] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
@@ -61,7 +61,7 @@ void	Harl::complain(string level)
 	}
 }
 
-Harl::Harl( void )
+Harl::Harl(void)
 {
 }
 

@@ -6,24 +6,24 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:17:33 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 17:41:28 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-const string	&Weapon::getType()
+const std::string	&Weapon::getType()
 {
-	string &str = _type;
+	std::string &str = _type;
 	return (str);
 }
 
-void	Weapon::setType(string new_type)
+void	Weapon::setType(std::string new_type)
 {
 	_type = new_type;
 }
 
-Weapon::Weapon(string weapon)
+Weapon::Weapon(std::string weapon)
 {
 	setType(weapon);
 }

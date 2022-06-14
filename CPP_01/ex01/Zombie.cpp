@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:39 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 15:45:42 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	Zombie::announce()
 {
-	cout << this->_name << ": BraiiiiiiinnnzzzZ..." << endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void	Zombie::setName(string name)
+void	Zombie::setName(std::string name)
 {
 	this->_name = name;
 }
@@ -29,5 +29,5 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-	cout << this->_name << ": Is dead by daylight" << endl;
+	std::cout << this->_name << ": Is dead by daylight" << std::endl;
 }

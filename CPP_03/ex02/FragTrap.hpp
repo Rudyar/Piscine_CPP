@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:21:37 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 12:30:42 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:56:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 #include <iostream>
 #include <string>
 #include "ClapTrap.hpp"
-using namespace std;
 
 class FragTrap : public ClapTrap
 {
 
 	public:
 		FragTrap();
-		FragTrap(string name);
+		FragTrap(std::string name);
 		FragTrap(FragTrap const & src);
 		~FragTrap();
 		FragTrap	&operator=(FragTrap const &a);
 		void		highFivesGuys(void);
 };
 
-#endif /* ******************************************************** FRAGTRAP_H */
+#endif

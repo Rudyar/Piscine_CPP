@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:54:28 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/10 18:41:53 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int ac, char **av)
 {
 	Harl harl;
 	int	i;
-	string list[4] = {
+	std::string list[4] = {
 	"DEBUG",
 	"INFO",
 	"WARNING",
@@ -25,7 +25,7 @@ int main(int ac, char **av)
 
 	if(ac != 2)
 		return (1);
-	string level = av[1];
+	std::string level = av[1];
 	for (i = 0; i < 4; i++)
 	{
 		if (list[i] == level)
@@ -52,7 +52,7 @@ int main(int ac, char **av)
 		harl.complain("ERROR");
 		break;
 	default:
-			cout << "[ Probably complaining about insignificant problems ]" << endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		break;
 	}
 	return (0);

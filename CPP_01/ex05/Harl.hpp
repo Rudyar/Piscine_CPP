@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:54:52 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/10 17:22:35 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:22:34 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,19 @@
 
 #include <string>
 #include <iostream>
-using namespace std;
 
 class Harl
 {
 	private:
-		void	debug( void );
-		void	info( void );
-		void	warning( void );
-		void	error( void );
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 
 	public:
-		Harl( void );
+		Harl(void);
 		~Harl();
-		void	complain(string level);
+		void	complain(std::string level);
 };
 
 #endif

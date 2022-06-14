@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:21:33 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 12:56:07 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	cout << "FragTrap default constructor called" << endl;
+	std::cout << "FragTrap default constructor called" << std::endl;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
@@ -26,14 +26,13 @@ FragTrap::FragTrap() : ClapTrap()
 
 FragTrap::FragTrap(const FragTrap & src) : ClapTrap(src)
 {
-	cout << "FragTrap copy constructor called" << endl;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = src;
 }
 
-FragTrap::FragTrap(string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	cout << "FragTrap with name constructor called" << endl;
-	_name = name;
+	std::cout << "FragTrap with name constructor called" << std::endl;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
@@ -45,7 +44,7 @@ FragTrap::FragTrap(string name) : ClapTrap(name)
 
 FragTrap::~FragTrap()
 {
-	cout << "FragTrap destructor called" << endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 
@@ -55,7 +54,7 @@ FragTrap::~FragTrap()
 
 FragTrap	&FragTrap::operator=(FragTrap const &a)
 {
-	cout << "FragTrap operator '=' called" << endl;
+	std::cout << "FragTrap operator '=' called" << std::endl;
 	ClapTrap::operator=(a);
 	return *this;
 }
@@ -66,5 +65,5 @@ FragTrap	&FragTrap::operator=(FragTrap const &a)
 
 void	FragTrap::highFivesGuys(void)
 {
-	cout << "FragTrap " << _name << " : High Five Guys ?!" << endl;
+	std::cout << "FragTrap " << _name << " : High Five Guys ?!" << std::endl;
 }

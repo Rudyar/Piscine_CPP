@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:43:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 17:51:58 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:38:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,42 +21,42 @@ int main(void)
 	Fixed const e(12);
 	Fixed const f(-9);
 
-	cout << "===== Comp operators ======" << endl << endl;
-	cout << (b > c) << " : False" << endl;
-	cout << (b < c) << " : True" << endl;
-	cout << (c <= d) << " : True" << endl;
-	cout << (c >= d) << " : True" << endl;
-	cout << (c == d) << " : True" << endl;
-	cout << (c != d) << " : False" << endl;
+	std::cout << "===== Comp operators ======" << std::endl << std::endl;
+	std::cout << (b > c) << " : False" << std::endl;
+	std::cout << (b < c) << " : True" << std::endl;
+	std::cout << (c <= d) << " : True" << std::endl;
+	std::cout << (c >= d) << " : True" << std::endl;
+	std::cout << (c == d) << " : True" << std::endl;
+	std::cout << (c != d) << " : False" << std::endl;
 
-	cout << endl << "===== Artithmetic operators ======" << endl << endl;
-	cout << "b = " << b << " | c = " << c << " | d = " << d << endl;
-	cout << " c + d = " << (c + d) << endl;
-	cout << " c - d = " << (c - d) << endl;
-	cout << " c * b = " << (c * b) << endl;
-	cout << " c / b = " << (c / b) << endl;
+	std::cout << std::endl << "===== Arithmetic operators ======" << std::endl << std::endl;
+	std::cout << "b = " << b << " | c = " << c << " | d = " << d << std::endl;
+	std::cout << " c + d = " << (c + d) << std::endl;
+	std::cout << " c - d = " << (c - d) << std::endl;
+	std::cout << " c * b = " << (c * b) << std::endl;
+	std::cout << " c / b = " << (c / b) << std::endl;
 
-	cout << endl << "===== Increment operators ======" << endl << endl;
-	cout << "a = " << a << endl;
-	cout << "++a = " << ++a << endl;
-	cout << "a = " << a << endl;
-	cout << "a++ = " << a++ << endl;
-	cout << "a = " << a << endl;
+	std::cout << std::endl << "===== Increment operators ======" << std::endl << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "++a = " << ++a << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "a++ = " << a++ << std::endl;
+	std::cout << "a = " << a << std::endl;
 
-	cout << endl << "===== Decrement operators ======" << endl << endl;
-	cout << "a = " << a << endl;
-	cout << "--a = " << --a << endl;
-	cout << "a = " << a << endl;
-	cout << "a-- = " << a-- << endl;
-	cout << "a = " << a << endl;
+	std::cout << std::endl << "===== Decrement operators ======" << std::endl << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "--a = " << --a << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "a-- = " << a-- << std::endl;
+	std::cout << "a = " << a << std::endl;
 
-	cout << endl << "===== Decrement operators ======" << endl << endl;
-	cout << "a = " << a << " | b = " << b << " | e = " << e;
-	cout << " | f = " << f << endl;
-	cout << "Max between a & b : " << Fixed::max( a, b )  << endl;
-	cout << "Min between a & b : " << Fixed::min( a, b )  << endl;
-	cout << "Max between e & f const : " << Fixed::max( e, f )  << endl;
-	cout << "Min between e & f const : " << Fixed::min( e, f )  << endl;
+	std::cout << std::endl << "=====Min & Max functions ======" << std::endl << std::endl;
+	std::cout << "a = " << a << " | b = " << b << " | e = " << e;
+	std::cout << " | f = " << f << std::endl;
+	std::cout << "Max between a & b : " << Fixed::max( a, b )  << std::endl;
+	std::cout << "Min between a & b : " << Fixed::min( a, b )  << std::endl;
+	std::cout << "Max between e & f const : " << Fixed::max( e, f )  << std::endl;
+	std::cout << "Min between e & f const : " << Fixed::min( e, f )  << std::endl;
 
 	return 0;
 }
@@ -66,14 +66,14 @@ int main(void)
 // 	Fixed a;
 // 	Fixed b( Fixed( 5.05f ) * Fixed( 2 ));
 
-// 	cout << a << endl;
-// 	cout << ++a << endl;
-// 	cout << a << endl;
-// 	cout << a++ << endl;
-// 	cout << a << endl;
+// 	std::cout << a << std::endl;
+// 	std::cout << ++a << std::endl;
+// 	std::cout << a << std::endl;
+// 	std::cout << a++ << std::endl;
+// 	std::cout << a << std::endl;
 
-// 	cout << b << endl;
-// 	cout << Fixed::max( a, b )  << endl;
+// 	std::cout << b << std::endl;
+// 	std::cout << Fixed::max( a, b )  << std::endl;
 
 // 	return 0;
 // }

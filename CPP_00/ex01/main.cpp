@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:38:23 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/07 16:18:40 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:48:35 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 int	main(void)
 {
 	PhoneBook	phone_book;
-	string		input;
+	std::string		input;
 
-	cout << endl << CYAN << "==== WELCOME TO MY AWESOME PHONEBOOK ====" << RES << endl << endl;
+	std::cout << std::endl << CYAN << "==== WELCOME TO MY AWESOME PHONEBOOK ====" << RES << std::endl << std::endl;
 	while (input != "EXIT")
 	{
-		cout << MAG << "What would you like to do ? ADD, SEARCH or EXIT \n> " << RES;
-		getline(cin, input);
-		if (cin.eof())
+		std::cout << MAG << "What would you like to do ? ADD, SEARCH or EXIT \n> " << RES;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
 			break ;
 		if (input == "ADD")
 			phone_book.add_contact();
 		else if (input == "SEARCH")
 			phone_book.display_contacts();
 	}
-	cout << GREEN << "Bye bye" << RES << endl;
+	std::cout << GREEN << "Bye bye" << RES << std::endl;
 	return (0);
 }

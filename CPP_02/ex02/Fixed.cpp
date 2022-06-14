@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:45:43 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 17:54:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:39:11 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ Fixed const	&Fixed::max( Fixed const &a, Fixed const &b)
 	return b;
 }
 
-ostream	&operator<<(ostream &o, Fixed const &n)
+std::ostream	&operator<<(std::ostream &o, Fixed const &n)
 {
 	o << n.toFloat();
 	return o;

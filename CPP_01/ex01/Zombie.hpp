@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:42 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 15:43:22 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:11:44 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 # define ZOMBIE_HPP
 #include <iostream>
 #include <string>
-using namespace std;
 
 class Zombie
 {
 	private:
-		string	_name;
+		std::string	_name;
 	public:
 		Zombie();
-		Zombie(string name);
+		Zombie(std::string name);
 		~Zombie();
 		void	announce( void );
-		void	setName(string name);
+		void	setName(std::string name);
 };
 
 Zombie* zombieHorde( int N, std::string name );

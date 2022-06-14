@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:44:38 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/12 17:19:31 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:38:37 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
 class Fixed
 {
@@ -59,6 +58,6 @@ class Fixed
 		static Fixed const	&max( Fixed const &a, Fixed const &b);
 };
 
-ostream	&operator<<( ostream &o, Fixed const &n );
+std::ostream	&operator<<(std::ostream &o, Fixed const &n);
 
 #endif

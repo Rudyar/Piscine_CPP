@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:36 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 16:00:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 16:09:59 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ Zombie* zombieHorde( int N, std::string name )
 {
 	if (N < 1)
 	{
-		cout << "N as to be positive" << endl;
+		std::cout << "N as to be positive" << std::endl;
 		return (NULL);
 	}
 	if (name.empty())
 	{
-		cout << "Name can't be empty" << endl;
+		std::cout << "Name can't be empty" << std::endl;
 		return (NULL);
 	}
 	Zombie	*zombies = new Zombie[N];

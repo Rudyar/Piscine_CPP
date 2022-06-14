@@ -6,13 +6,13 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:36 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 14:50:19 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	randomChump(string name)
+void	randomChump(std::string name)
 {
 	Zombie new_zombie(name);
 }

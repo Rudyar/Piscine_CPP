@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:01:17 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 16:01:54 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 int	main(void)
 {
 	int	N = 5;
-	string name = "Denis";
+	std::string name = "Denis";
 	Zombie *zombies = zombieHorde(N, name);
 	if (!zombies)
 		return (1);
-	cout << "=======================================" << endl;
-	cout << N << " Zombies created by zombieHorde function" << endl;
-	cout << "=======================================" << endl << endl;
+	std::cout << "=======================================" << std::endl;
+	std::cout << N << " Zombies created by zombieHorde function" << std::endl;
+	std::cout << "=======================================" << std::endl << std::endl;
 	for (int i = 0; i < N; i++)
 		zombies[i].announce();
-	cout << "=======================================" << endl << endl;
+	std::cout << "=======================================" << std::endl << std::endl;
 	delete [] zombies;
 	return (0);
 }

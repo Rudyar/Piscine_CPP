@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:54:28 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/10 18:18:10 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:48:35 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int main(void)
 	Harl harl;
 
 	harl.complain("DEBUG");
-	cout << endl;
+	std::cout << std::endl;
 	harl.complain("INFO");
-	cout << endl;
+	std::cout << std::endl;
 	harl.complain("WARNING");
-	cout << endl;
+	std::cout << std::endl;
 	harl.complain("ERROR");
-	cout << endl;
+	std::cout << std::endl;
 	harl.complain("coucou");
 	return (0);
 }

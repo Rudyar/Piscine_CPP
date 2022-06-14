@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:32:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/09 14:46:31 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:54:25 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,45 +38,45 @@ void	Contact::random_create(int i)
 
 void	contact_header()
 {
-	cout << "---------------------------------------------" << endl;
-	cout << "|     Index|First Name| Last Name| Nick Name|" << endl;
-	cout << "|----------|----------|----------|----------|" << endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|     Index|First Name| Last Name| Nick Name|" << std::endl;
+	std::cout << "|----------|----------|----------|----------|" << std::endl;
 }
 
 void	Contact::display_contact()
 {
 	int	i;
 
-	cout << "|";
+	std::cout << "|";
 	for (i = 0; i < 9; i++)
-		cout << " ";
-	cout << this->index + 1 << "|";
+		std::cout << " ";
+	std::cout << this->index + 1 << "|";
 	if (this->first_name.size() > 10)
-		cout << this->first_name.substr(0, 9) << "." << "|";
+		std::cout << this->first_name.substr(0, 9) << "." << "|";
 	else
 	{
 		for (i = 0 + this->first_name.size(); i < 10; i++)
-			cout << " ";
-		cout << this->first_name << "|";
+			std::cout << " ";
+		std::cout << this->first_name << "|";
 	}
 
 	if (this->last_name.size() > 10)
-		cout << this->last_name.substr(0, 9) << "." << "|";
+		std::cout << this->last_name.substr(0, 9) << "." << "|";
 	else
 	{
 		for (i = 0 + this->last_name.size(); i < 10; i++)
-			cout << " ";
-		cout << this->last_name << "|";
+			std::cout << " ";
+		std::cout << this->last_name << "|";
 	}
 	if (this->nick_name.size() > 10)
-		cout << this->nick_name.substr(0, 9) << "." << "|";
+		std::cout << this->nick_name.substr(0, 9) << "." << "|";
 	else
 	{
 		for (i = 0 + this->nick_name.size(); i < 10; i++)
-			cout << " ";
-		cout << this->nick_name << "|";
+			std::cout << " ";
+		std::cout << this->nick_name << "|";
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 
 void	Contact::create_contact(int index)
@@ -89,7 +89,7 @@ void	Contact::create_contact(int index)
 	this->set_index(index);
 }
 
-int	check_str(string s)
+int	check_str(std::string s)
 {
 
 	for (size_t i = 0; i < s.size(); i++)
@@ -97,17 +97,17 @@ int	check_str(string s)
 		if (s[i] != ' ' && s[i] != '\t')
 			return (0);
 	}
-	cout << RED << "Input can't be only whitespaces" << RES << endl;
+	std::cout << RED << "Input can't be only whitespaces" << RES << std::endl;
 	return (1);
 }
 
-int	check_phone_number(string s)
+int	check_phone_number(std::string s)
 {
 	for (size_t i = 0; i < s.size(); i++)
 	{
 		if (!isdigit(s[i]) && s[i] != '+')
 		{
-			cout << RED << "Phone Number can be compose only by numbers and '+'" << RES << endl;
+			std::cout << RED << "Phone Number can be compose only by numbers and '+'" << RES << std::endl;
 			return (1);
 		}
 	}
@@ -116,16 +116,16 @@ int	check_phone_number(string s)
 
 void	Contact::set_firstname()
 {
-	string str;
+	std::string str;
 
 	while (str.empty() || check_str(str))
 	{
-		cout << "New contact First Name \n> ";
-		getline(cin, str);
-		if (cin.eof())
+		std::cout << "New contact First Name \n> ";
+		std::getline(std::cin, str);
+		if (std::cin.eof())
 			exit(0);
 		if (str.empty())
-			cout << RED << "Input can't be empty" << RES << endl;
+			std::cout << RED << "Input can't be empty" << RES << std::endl;
 
 	}
 	this->first_name = str;
@@ -133,64 +133,64 @@ void	Contact::set_firstname()
 
 void	Contact::set_lastname()
 {
-	string str;
+	std::string str;
 
 	while (str.empty() || check_str(str))
 	{
-		cout << "New contact Last Name \n> ";
-		getline(cin, str);
-		if (cin.eof())
+		std::cout << "New contact Last Name \n> ";
+		std::getline(std::cin, str);
+		if (std::cin.eof())
 			exit(0);
 		if (str.empty())
-			cout << RED << "Input can't be empty" << RES << endl;
+			std::cout << RED << "Input can't be empty" << RES << std::endl;
 	}
 	this->last_name = str;
 }
 
 void	Contact::set_nickname()
 {
-	string str;
+	std::string str;
 
 	while (str.empty() || check_str(str))
 	{
-		cout << "New contact nick name \n> ";
-		getline(cin, str);
-		if (cin.eof())
+		std::cout << "New contact nick name \n> ";
+		std::getline(std::cin, str);
+		if (std::cin.eof())
 			exit(0);
 		if (str.empty())
-			cout << RED << "Input can't be empty" << RES << endl;
+			std::cout << RED << "Input can't be empty" << RES << std::endl;
 	}
 	this->nick_name = str;
 }
 
 void	Contact::set_phonenumber()
 {
-	string str;
+	std::string str;
 
 	while (str.empty() || check_str(str) || check_phone_number(str))
 	{
-		cout << "New contact phone number \n> ";
-		getline(cin, str);
-		if (cin.eof())
+		std::cout << "New contact phone number \n> ";
+		std::getline(std::cin, str);
+		if (std::cin.eof())
 			exit(0);
 		if (str.empty())
-			cout << RED << "Input can't be empty" << RES << endl;
+			std::cout << RED << "Input can't be empty" << RES << std::endl;
 	}
 	this->phone_number = str;
 }
 
 void	Contact::set_darkestsecret()
 {
-	string str;
+	std::string str;
 
 	while (str.empty() || check_str(str))
 	{
-		cout << "New contact darkest secret \n> ";
-		getline(cin, str);
-		if (cin.eof())
+		std::cout << "New contact darkest secret \n> ";
+		std::getline(std::cin, str);
+		if (std::cin.eof())
 			exit(0);
 		if (str.empty())
-			cout << RED << "Input can't be empty" << RES << endl;
+			std::cout << RED << "Input can't be empty" << RES << std::endl;
 	}
 	this->darkest_secret = str;
 }
@@ -200,27 +200,27 @@ void	Contact::set_index(int index)
 	this->index = index;
 }
 
-string	Contact::get_firstname()
+std::string	Contact::get_firstname()
 {
 	return (this->first_name);
 }
 
-string	Contact::get_lastname()
+std::string	Contact::get_lastname()
 {
 	return (this->last_name);
 }
 
-string	Contact::get_nickname()
+std::string	Contact::get_nickname()
 {
 	return (this->nick_name);
 }
 
-string	Contact::get_phonenumber()
+std::string	Contact::get_phonenumber()
 {
 	return (this->phone_number);
 }
 
-string	Contact::get_darkestsecret()
+std::string	Contact::get_darkestsecret()
 {
 	return (this->darkest_secret);
 }
