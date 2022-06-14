@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:21:33 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 12:33:39 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/14 12:56:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ FragTrap::FragTrap(const FragTrap & src) : ClapTrap(src)
 
 FragTrap::FragTrap(string name) : ClapTrap(name)
 {
-	cout << "ScavTrap with name constructor called" << endl;
+	cout << "FragTrap with name constructor called" << endl;
 	_name = name;
 	_hitPoints = 100;
 	_energyPoints = 100;
@@ -57,10 +57,6 @@ FragTrap	&FragTrap::operator=(FragTrap const &a)
 {
 	cout << "FragTrap operator '=' called" << endl;
 	ClapTrap::operator=(a);
-	_name = a.getName();
-	_hitPoints = a.getHitPoints();
-	_energyPoints = a.getEnergyPoints();
-	_attackDamage = a.getAttackDammage();
 	return *this;
 }
 
