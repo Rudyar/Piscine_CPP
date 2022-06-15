@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/15 18:57:21 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/15 19:02:22 by arudy            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 /*
@@ -6,10 +18,14 @@
 
 Animal::Animal()
 {
+	std::cout << "Animal default constructor called" << std::endl;
+	type = "Animal";
 }
 
 Animal::Animal( const Animal & src )
 {
+	std::cout << "Animal copy constructor called" << std::endl;
+	*this = src;
 }
 
 
@@ -19,6 +35,7 @@ Animal::Animal( const Animal & src )
 
 Animal::~Animal()
 {
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 
@@ -26,18 +43,15 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+Animal	&Animal::operator=( Animal const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	std::cout << "Animal operator '=' called" << std::endl;
+	this->type = rhs.getType();
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream	&operator<<( std::ostream & o, Animal const & i )
 {
-	//o << "Value = " << i.getValue();
 	return o;
 }
 
@@ -46,10 +60,18 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	Animal::makeSound()
+{
+	std::cout << "I'm an animal !" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+std::string	Animal::getType() const
+{
+	return this->type;
+}
 
 /* ************************************************************************** */
