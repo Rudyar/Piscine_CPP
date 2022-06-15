@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:32:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 15:54:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/15 17:21:21 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,23 @@ void	Contact::random_create(int i)
 	this->index = i;
 }
 
-void	contact_header()
+void	contact_header(int n)
 {
-	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|     Index|First Name| Last Name| Nick Name|" << std::endl;
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
+	if (n == 1)
+	{
+		std::cout << "---------------------------------------------" << std::endl;
+		std::cout << "|     Index|First Name| Last Name| Nick Name|" << std::endl;
+		std::cout << "|----------|----------|----------|----------|" << std::endl;
+	}
+	else
+	{
+		std::cout << "--------------------------------------------------------" << std::endl;
+		std::cout << "|     Index|First Name| Last Name| Nick Name|    Secret|" << std::endl;
+		std::cout << "|----------|----------|----------|----------|----------|" << std::endl;
+	}
 }
 
-void	Contact::display_contact()
+void	Contact::display_contact(int n)
 {
 	int	i;
 
@@ -75,6 +84,17 @@ void	Contact::display_contact()
 		for (i = 0 + this->nick_name.size(); i < 10; i++)
 			std::cout << " ";
 		std::cout << this->nick_name << "|";
+	}
+	if (n == 1)
+	{
+		if (this->darkest_secret.size() > 10)
+			std::cout << this->darkest_secret.substr(0, 9) << "." << "|";
+		else
+		{
+			for (i = 0 + this->darkest_secret.size(); i < 10; i++)
+				std::cout << " ";
+			std::cout << this->darkest_secret << "|";
+		}
 	}
 	std::cout << std::endl;
 }

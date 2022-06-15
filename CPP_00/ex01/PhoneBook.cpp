@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:28:25 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 15:54:27 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/15 17:25:54 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ void	PhoneBook::display_contacts()
 		return ;
 	}
 	std::cout << CYAN << "==== Search contact in Phone Book ====" << RES << std::endl;
-	contact_header();
+	contact_header(1);
 	for (i = 0; i < nb_contacts(); i++)
 	{
-		this->contact[i].display_contact();
+		this->contact[i].display_contact(0);
 		if (i != nb_contacts() - 1)
 			std::cout << "|----------|----------|----------|----------|" << std::endl;
 		else
@@ -73,16 +73,16 @@ void	PhoneBook::search_contact()
 		if (input.length() == 1 && isdigit(input[0]))
 		{
 			n = input[0] - 48;
-			if (n < nb_contacts() && n > 0)
+			if (n <= nb_contacts() && n > 0)
 				break ;
 		}
 		std::cout << RED << "Wrong index" << RES << std::endl;
 	}
 	std::cout << GREEN << "=== Here, all details of the contact ====" << RES << std::endl;
-	contact_header();
+	contact_header(2);
 
-	this->contact[n - 1].display_contact();
-	std::cout << "---------------------------------------------" << std::endl;
+	this->contact[n - 1].display_contact(1);
+	std::cout << "--------------------------------------------------------" << std::endl;
 }
 
 void	PhoneBook::add_contact()
