@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:40 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/17 16:58:05 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 19:14:47 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,17 @@ int main()
 	delete c;
 	delete d;
 
-	// std::cout << std::endl << std::endl << "---- WRONG ANIMALS ----" << std::endl;
-	// const WrongAnimal* loulou = new WrongAnimal();
-	// std::cout << loulou->getType() << " " << std::endl;
-	// delete loulou;
+	std::cout << std::endl << std::endl << "---- WRONG ANIMALS ----" << std::endl;
+	const WrongAnimal* loulou = new WrongAnimal();
+	const WrongAnimal* lala = new WrongCat();
+	const WrongAnimal* lolo = new WrongCat();
+	std::cout << loulou->getType() << " " << std::endl;
+	std::cout << lala->getType() << " " << std::endl;
+	std::cout << lolo->getType() << " " << std::endl;
+	loulou->makeSound();
+	lala->makeSound();
+	delete loulou;
+	delete lala;
 
 	return 0;
 }
