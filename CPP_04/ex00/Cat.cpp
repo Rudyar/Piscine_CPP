@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:28 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/17 11:24:49 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 16:57:01 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,12 @@ Cat::~Cat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Cat &	Cat::operator=( Cat const & rhs )
 {
 	std::cout << "Cat operator '=' called" << std::endl;
 	this->type = rhs.getType();
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Cat const & i )
-{
-	(void)i;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

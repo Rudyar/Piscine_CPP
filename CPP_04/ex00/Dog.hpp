@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:37 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/17 11:41:17 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 14:55:13 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ class Dog : public Animal
 		~Dog();
 
 		Dog &	operator=( Dog const & rhs );
-		// virtual void	makeSound() const;
 		void	makeSound() const;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i );
 
 #endif /* ************************************************************* DOG_H */

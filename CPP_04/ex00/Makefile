@@ -6,13 +6,13 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/15 15:00:51 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/17 14:42:24 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= animal
 
-SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
