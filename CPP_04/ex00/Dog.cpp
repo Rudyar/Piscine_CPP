@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:31 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/15 18:57:32 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:25:12 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
+	std::cout << "Dog default constructor called" << std::endl;
+	type = "Dog";
 }
 
-Dog::Dog( const Dog & src )
+Dog::Dog( const Dog & src ) : Animal(src)
 {
+	std::cout << "Dog copy constructor called" << std::endl;
+	*this = src;
 }
 
 
@@ -31,6 +35,7 @@ Dog::Dog( const Dog & src )
 
 Dog::~Dog()
 {
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 
@@ -40,16 +45,14 @@ Dog::~Dog()
 
 Dog &				Dog::operator=( Dog const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	std::cout << "Dog operator '=' called" << std::endl;
+	this->type = rhs.getType();
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, Dog const & i )
 {
-	//o << "Value = " << i.getValue();
+	(void)i;
 	return o;
 }
 
@@ -58,6 +61,10 @@ std::ostream &			operator<<( std::ostream & o, Dog const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	Dog::makeSound() const
+{
+	std::cout << "Waf Waf Waf" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

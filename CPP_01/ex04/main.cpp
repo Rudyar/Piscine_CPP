@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:11:23 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 16:16:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 14:10:57 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	search_replace(std::string s1, std::string s2, std::ifstream &in, std::ofst
 
 	if (s1.empty())
 	{
-		std::cerr << "Can't find an empty std::string in file..." << std::endl;
+		std::cerr << "Can't find an empty string in file..." << std::endl;
 		exit(1);
 	}
 	while(std::getline(in, buff))

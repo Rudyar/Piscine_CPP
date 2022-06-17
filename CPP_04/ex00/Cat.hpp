@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/15 18:58:22 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:41:09 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Cat : public Animal
 		Cat( Cat const & src );
 		~Cat();
 
-		Cat &		operator=( Cat const & rhs );
-
-	private:
+		Cat &	operator=( Cat const & rhs );
+		// virtual void	makeSound() const;
+		void	makeSound() const;
 
 };
 

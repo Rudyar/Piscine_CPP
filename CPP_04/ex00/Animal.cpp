@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:21 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/15 19:02:22 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:24:45 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ Animal	&Animal::operator=( Animal const & rhs )
 
 std::ostream	&operator<<( std::ostream & o, Animal const & i )
 {
+	(void)i;
 	return o;
 }
 
@@ -60,7 +61,7 @@ std::ostream	&operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::makeSound()
+void	Animal::makeSound() const
 {
 	std::cout << "I'm an animal !" << std::endl;
 }

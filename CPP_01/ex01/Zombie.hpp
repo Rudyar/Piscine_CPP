@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:42 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 16:11:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 13:55:54 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Zombie
 		std::string	_name;
 	public:
 		Zombie();
-		Zombie(std::string name);
 		~Zombie();
 		void	announce( void );
 		void	setName(std::string name);

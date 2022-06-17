@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:37 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/15 18:58:08 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:41:17 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@
 # include <string>
 #include "Animal.hpp"
 
-class Dog
+class Dog : public Animal
 {
-
 	public:
-
 		Dog();
 		Dog( Dog const & src );
 		~Dog();
 
-		Dog &		operator=( Dog const & rhs );
-
-	private:
+		Dog &	operator=( Dog const & rhs );
+		// virtual void	makeSound() const;
+		void	makeSound() const;
 
 };
 

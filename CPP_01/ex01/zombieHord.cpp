@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:00:36 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 16:09:59 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 13:56:32 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Zombie* zombieHorde( int N, std::string name )
 {
 	if (N < 1)
 	{
-		std::cout << "N as to be positive" << std::endl;
+		std::cout << "N have to be > 0" << std::endl;
 		return (NULL);
 	}
 	if (name.empty())

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:54:28 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/14 15:52:05 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/17 14:14:52 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,27 @@ int main(int ac, char **av)
 	}
 	switch (i)
 	{
-	case 0:
-		harl.complain("DEBUG");
-		harl.complain("INFO");
-		harl.complain("WARNING");
-		harl.complain("ERROR");
-		break ;
-	case 1:
-		harl.complain("INFO");
-		harl.complain("WARNING");
-		harl.complain("ERROR");
-		break;
-	case 2:
-		harl.complain("WARNING");
-		harl.complain("ERROR");
-		break;
-	case 3:
-		harl.complain("ERROR");
-		break;
-	default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		break;
+		case 0:
+			harl.complain("DEBUG");
+			harl.complain("INFO");
+			harl.complain("WARNING");
+			harl.complain("ERROR");
+			break ;
+		case 1:
+			harl.complain("INFO");
+			harl.complain("WARNING");
+			harl.complain("ERROR");
+			break;
+		case 2:
+			harl.complain("WARNING");
+			harl.complain("ERROR");
+			break;
+		case 3:
+			harl.complain("ERROR");
+			break;
+		default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
 	}
 	return (0);
 }
