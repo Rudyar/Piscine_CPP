@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:25 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/17 14:43:21 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/20 19:02:24 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class Animal
 		Animal( Animal const & src );
 		virtual ~Animal();
 
-		Animal	&operator=( Animal const & rhs );
-		std::string	getType() const;
-		virtual void	makeSound() const;
+		Animal			&operator=( Animal const & rhs );
+		std::string				getType() const;
+		virtual void			makeSound() const;
+		// virtual std::string		getIdea(int i) const;
+		// virtual void			setIdea(int i, std::string str);
 
 	protected:
 		std::string	type;

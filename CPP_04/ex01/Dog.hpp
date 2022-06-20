@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:37 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/20 13:05:45 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/20 18:49:41 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ class Dog : public Animal
 		Dog( Dog const & src );
 		~Dog();
 
-		Dog &	operator=( Dog const & rhs );
-		void	makeSound() const;
+		Dog &		operator=( Dog const & rhs );
+		virtual void		makeSound() const;
+		virtual std::string	getIdea(int i) const;
+		virtual void		setIdea(int i, std::string str);
 
 	private:
 		Brain* _brain;
