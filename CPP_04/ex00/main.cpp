@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:40 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/17 19:14:47 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 16:04:25 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
 	Cat* c = new Cat();
 	Dog *d = new Dog();
 
+	std::cout << std::endl;
 	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -35,6 +36,7 @@ int main()
 	j->makeSound();
 	c->makeSound();
 	d->makeSound();
+	std::cout << std::endl;
 	delete meta;
 	delete i;
 	delete j;
@@ -50,8 +52,11 @@ int main()
 	std::cout << lolo->getType() << " " << std::endl;
 	loulou->makeSound();
 	lala->makeSound();
+	lolo->makeSound();
+	std::cout << std::endl;
 	delete loulou;
 	delete lala;
+	delete lolo;
 
 	return 0;
 }

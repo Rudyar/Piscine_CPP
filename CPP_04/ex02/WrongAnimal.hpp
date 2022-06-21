@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:42:40 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/17 16:49:19 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 16:25:18 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
 
 		WrongAnimal &	operator=( WrongAnimal const & rhs );
 		std::string		getType() const;
-		virtual void	makeSound() const;
+		void	makeSound() const;
 
 	protected:
 		std::string	type;
