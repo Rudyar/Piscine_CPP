@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 18:57:37 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/21 15:48:33 by arudy            ###   ########.fr       */
+/*   Created: 2022/06/15 18:57:25 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/21 15:22:36 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal
+class AAnimal
 {
 	public:
-		Dog();
-		Dog( Dog const & src );
-		virtual ~Dog();
+		AAnimal();
+		AAnimal( AAnimal const & src );
+		virtual ~AAnimal();
 
-		Dog &		operator=( Dog const & rhs );
-		virtual void		makeSound() const;
-		virtual std::string	getIdea(int i) const;
-		virtual void		setIdea(int i, std::string str);
+		AAnimal			&operator=( AAnimal const & rhs );
+		std::string				getType() const;
+		virtual void			makeSound() const = 0;
+		virtual std::string		getIdea(int i) const;
+		virtual void			setIdea(int i, std::string str);
 
-	private:
-		Brain* _brain;
+	protected:
+		std::string	type;
+
 };
 
-#endif /* ************************************************************* DOG_H */
+#endif /* ********************************************************** ANIMAL_H */

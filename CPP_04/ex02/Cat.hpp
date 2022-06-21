@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/21 15:40:07 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 15:23:09 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 
 	public:
 
 		Cat();
 		Cat( Cat const & src );
-		virtual ~Cat();
+		~Cat();
 
 		Cat &				operator=( Cat const & rhs );
-		virtual void		makeSound() const;
-		virtual std::string	getIdea(int i) const;
-		virtual void		setIdea(int i, std::string str);
+		 void		makeSound() const;
+		 std::string	getIdea(int i) const;
+		 void		setIdea(int i, std::string str);
 
 	private:
 		Brain* _brain;

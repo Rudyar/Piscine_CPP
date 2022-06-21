@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 18:57:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/21 15:40:07 by arudy            ###   ########.fr       */
+/*   Created: 2022/06/15 18:57:37 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/21 15:23:24 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <iostream>
-#include <string>
-#include "Animal.hpp"
+# include <iostream>
+# include <string>
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public AAnimal
 {
-
 	public:
+		Dog();
+		Dog( Dog const & src );
+		~Dog();
 
-		Cat();
-		Cat( Cat const & src );
-		virtual ~Cat();
-
-		Cat &				operator=( Cat const & rhs );
+		Dog &		operator=( Dog const & rhs );
 		virtual void		makeSound() const;
 		virtual std::string	getIdea(int i) const;
 		virtual void		setIdea(int i, std::string str);
@@ -36,4 +34,4 @@ class Cat : public Animal
 		Brain* _brain;
 };
 
-#endif /* ************************************************************* CAT_H */
+#endif /* ************************************************************* DOG_H */

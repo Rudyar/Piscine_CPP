@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 18:57:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/21 15:53:36 by arudy            ###   ########.fr       */
+/*   Created: 2022/06/17 14:42:48 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/17 15:45:10 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include <iostream>
-#include <string>
-#include "Animal.hpp"
+# include <iostream>
+# include <string>
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 
 	public:
 
-		Cat();
-		Cat( Cat const & src );
-		virtual ~Cat();
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		~WrongCat();
 
-		Cat &	operator=( Cat const & rhs );
-		virtual void	makeSound() const;
+		WrongCat &	operator=( WrongCat const & rhs );
+		void		makeSound() const;
 
 };
 
-#endif /* ************************************************************* CAT_H */
+#endif /* ******************************************************** WRONGCAT_H */

@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 18:57:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/21 15:53:36 by arudy            ###   ########.fr       */
+/*   Created: 2022/06/17 14:42:40 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/17 16:49:19 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-#include <iostream>
-#include <string>
-#include "Animal.hpp"
+# include <iostream>
+# include <string>
 
-class Cat : public Animal
+class WrongAnimal
 {
 
 	public:
+		WrongAnimal();
+		WrongAnimal( WrongAnimal const & src );
+		virtual ~WrongAnimal();
 
-		Cat();
-		Cat( Cat const & src );
-		virtual ~Cat();
-
-		Cat &	operator=( Cat const & rhs );
+		WrongAnimal &	operator=( WrongAnimal const & rhs );
+		std::string		getType() const;
 		virtual void	makeSound() const;
+
+	protected:
+		std::string	type;
 
 };
 
-#endif /* ************************************************************* CAT_H */
+#endif /* ***************************************************** WRONGANIMAL_H */
