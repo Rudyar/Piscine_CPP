@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:04:39 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/20 18:44:00 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 12:49:59 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,15 @@ Brain &				Brain::operator=( Brain const & rhs )
 
 void	Brain::setIdea(int i, std::string str)
 {
-	_ideas[i] = str;
+	if (i < 100 && i >= 0)
+		_ideas[i] = str;
 }
 
 std::string	Brain::getIdea(int i) const
 {
-	return _ideas[i];
+	if (i < 100 && i >= 0)
+		return _ideas[i];
+	return "";
 }
 
 /* ************************************************************************** */

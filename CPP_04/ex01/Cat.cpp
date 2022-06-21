@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:28 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/20 19:06:31 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 11:57:32 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ Cat::Cat() : Animal()
 Cat::Cat( const Cat & src ) : Animal(src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	_brain = new Brain();
+	_brain = NULL;
 	*this = src;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------

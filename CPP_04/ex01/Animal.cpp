@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:21 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/20 19:02:30 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 09:56:58 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,16 @@ std::string	Animal::getType() const
 	return this->type;
 }
 
-// void	Animal::setIdea(int i, std::string str)
-// {
-// 	(void)i;
-// 	(void)str;
-// }
+void	Animal::setIdea(int i, std::string str)
+{
+	(void)i;
+	(void)str;
+}
 
-// std::string	Animal::getIdea(int i) const
-// {
-// 	(void)i;
-// 	return "Coucou";
-// }
+std::string	Animal::getIdea(int i) const
+{
+	(void)i;
+	return "Coucou";
+}
 
 /* ************************************************************************** */

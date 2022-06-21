@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:57:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/20 18:57:17 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/21 10:54:18 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Cat : public Animal
 		~Cat();
 
 		Cat &				operator=( Cat const & rhs );
-		virtual void		makeSound() const;
-		virtual std::string	getIdea(int i) const;
-		virtual void		setIdea(int i, std::string str);
+		 void		makeSound() const;
+		 std::string	getIdea(int i) const;
+		 void		setIdea(int i, std::string str);
 
 	private:
 		Brain* _brain;
