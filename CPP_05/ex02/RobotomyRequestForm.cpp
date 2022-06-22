@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 16:38:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 18:56:02 by arudy            ###   ########.fr       */
+/*   Created: 2022/06/22 18:49:58 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/22 19:23:53 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shruberry Form", 145, 137), _target("No target")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Form", 72, 45), _target("No target")
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shruberry Form", 145, 137), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy Form", 72, 45), _target(target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ) : AForm("Shruberry Form", 145, 137)
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : AForm("Robotomy Form", 72, 45)
 {
 	*this = src;
 }
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
@@ -41,7 +42,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ShrubberyCreationForm &		ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
+RobotomyRequestForm &	RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
 	if (this == &rhs)
 		return *this;
@@ -53,39 +54,28 @@ ShrubberyCreationForm &		ShrubberyCreationForm::operator=( ShrubberyCreationForm
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() == false)
 		throw AForm::NotSignedExeption();
 	else if (executor.getGrade() > this->getExecGrade())
 		throw AForm::GradeTooLowExeption();
-	std::string	filename = this->getTarget() + "_shrubbery";
-	std::ofstream file;
-	file.open(filename.c_str());
-	if (!file)
-	{
-		std::cerr << "Can't open file" << std::endl;
-		return ;
-	}
-	std::string buff = "       _-_\n";
-	buff += "    /~~   ~~\\\n";
-	buff += " /~~         ~~\\\n";
-	buff += "{               }\n";
-	buff += " \\  _-     -_  /\n";
-	buff += "   ~  \\\\ //  ~\n";
-	buff += "_- -   | | _- _\n";
-	buff += "  _ -  | |   -_\n";
-	buff += "......// \\\\......_\n";
-	file << buff;
-	file.close();
 	std::cout << executor.getName() << " executed " << this->getName() << std::endl;
+	srand(time(NULL));
+	if (rand() % 2)
+	{
+		std::cout << "Brrrrrrrrrrrrrrrrrrrrrrrr" << std::endl;
+		std::cout << _target << " is robotomised with success" << std::endl;
+	}
+	else
+		std::cout << "Robotomisation failed..." << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string	ShrubberyCreationForm::getTarget() const
+std::string	RobotomyRequestForm::getTarget() const
 {
 	return _target;
 }
