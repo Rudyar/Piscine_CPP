@@ -6,11 +6,11 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/22 11:32:24 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/22 19:52:02 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= bureaucrat
+NAME	= form
 
 SRCS	= main.cpp Bureaucrat.cpp Form.cpp
 
