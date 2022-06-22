@@ -6,37 +6,114 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:10:54 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 11:18:41 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 15:27:28 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-	std::cout << "---- Init test ----" << std::endl;
+	std::cout << "---- Too High Sign Grade test ----" << std::endl;
+	try
 	{
-		Bureaucrat test("Denis", 1);
-		Bureaucrat test2("Gerard", 150);
-		Bureaucrat test3;
+		Form test("Inscription", 151, 1);
 		std::cout << test;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Too Low Sign Grade test ----" << std::endl;
+	try
+	{
+		Form test("Inscription", -42, 1);
+		std::cout << test;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Too High Exec Grade test ----" << std::endl;
+	try
+	{
+		Form test("Inscription", 12, 222222);
+		std::cout << test;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Too Low Exec Grade test ----" << std::endl;
+	try
+	{
+		Form test("Inscription", 12, -222222);
+		std::cout << test;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Ok tests ----" << std::endl;
+	try
+	{
+		Form test("Inscription", 1, 150);
+		Form test1("Account", 12, 15);
+		Form test2;
+		std::cout << test;
+		std::cout << test1;
 		std::cout << test2;
-		std::cout << test3;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Be signed ok test ----" << std::endl;
+	try
+	{
+		Form form("Inscription", 12, 12);
+		Bureaucrat bureaucrat("Gerard", 1);
+		std::cout << form;
+		std::cout << bureaucrat;
+		bureaucrat.signForm(form);
+		std::cout << form;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Form sign bureaucrat too low grade test ----" << std::endl;
+	try
+	{
+		Form form("Inscription", 12, 12);
+		Bureaucrat bureaucrat("Gerard", 13);
+		std::cout << form;
+		std::cout << bureaucrat;
+		bureaucrat.signForm(form);
+		std::cout << form;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << "---- Form sign bureaucrat already signed test ----" << std::endl;
+	try
+	{
+		Form form("Inscription", 12, 12);
+		Bureaucrat bureaucrat("Gerard", 12);
+		std::cout << bureaucrat;
+		std::cout << form;
+		bureaucrat.signForm(form);
+		std::cout << form;
+		bureaucrat.signForm(form);
+		std::cout << form;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << std::endl << "---- Increment & decrement test ----" << std::endl;
-	{
-		Bureaucrat test("Denis", 1);
-		Bureaucrat test2("Gerard", 150);
-		Bureaucrat test3;
-		test.incrementGrade();
-		test2.decrementGrade();
-		test3.incrementGrade();
-		test.decrementGrade();
-		std::cout << test;
-		std::cout << test2;
-		std::cout << test3;
-	}
 	return 0;
 }
 

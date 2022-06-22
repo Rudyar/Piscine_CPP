@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:09:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 11:22:45 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 13:59:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,7 @@ Bureaucrat::Bureaucrat() : _name("Unknow"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	try
-	{
-		setGrade(grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	setGrade(grade);
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name(src._name)
@@ -70,26 +63,12 @@ std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i )
 
 void	Bureaucrat::incrementGrade()
 {
-	try
-	{
-		setGrade(_grade - 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	setGrade(_grade - 1);
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	try
-	{
-		setGrade(_grade + 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	setGrade(_grade + 1);
 }
 
 

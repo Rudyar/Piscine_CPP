@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:09:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 11:22:45 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 15:21:34 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,7 @@ Bureaucrat::Bureaucrat() : _name("Unknow"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	try
-	{
-		setGrade(grade);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	setGrade(grade);
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name(src._name)
@@ -70,28 +63,19 @@ std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i )
 
 void	Bureaucrat::incrementGrade()
 {
-	try
-	{
-		setGrade(_grade - 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	setGrade(_grade - 1);
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	try
-	{
-		setGrade(_grade + 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	setGrade(_grade + 1);
 }
 
+void	Bureaucrat::signForm(Form & form)
+{
+	form.beSigned(*this);
+	std::cout << this->getName() << " signed " << form.getName() << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
@@ -122,12 +106,12 @@ void	Bureaucrat::setGrade(int i)
 
 const char*	Bureaucrat::GradeTooHighExeption::what() const throw()
 {
-	return ("Can't assign grade, it's too high !");
+	return ("Bureaucrat grade too high !");
 }
 
 const char*	Bureaucrat::GradeTooLowExeption::what() const throw()
 {
-	return ("Can't assign grade, it's too low !");
+	return ("Bureaucrat grade too low !");
 }
 
 /* ************************************************************************** */
