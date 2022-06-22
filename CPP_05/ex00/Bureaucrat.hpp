@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:09:56 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/21 20:15:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 11:21:49 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class Bureaucrat
 		Bureaucrat &	operator=( Bureaucrat const & rhs );
 		std::string		getName() const;
 		int				getGrade() const;
+		void			setGrade(int i);
 		void			incrementGrade();
 		void			decrementGrade();
-		void			checkGrade(int i);
 
 		class GradeTooHighExeption : public std::exception
 		{
