@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:38:49 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 17:27:04 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 17:58:11 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include <string>
 # include <stdexcept>
+# include <stdlib.h>
 # include "AForm.hpp"
 # include "Bureaucrat.hpp"
 

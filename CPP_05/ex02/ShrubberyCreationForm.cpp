@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:38:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 17:32:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 18:12:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 	*this = src;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -37,7 +36,6 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -57,7 +55,6 @@ std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
 	return o;
 }
 
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
@@ -68,7 +65,23 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw AForm::NotSignedExeption();
 	else if (executor.getGrade() > this->getExecGrade())
 		throw AForm::GradeTooLowExeption();
-	// create fd
+	std::string	filename = this->getTarget() + "_shrubbery";
+	std::ofstream file;
+	file.open(filename.c_str());
+	if (!file)
+		throw AForm::GradeTooLowExeption();
+	std::string buff = "       _-_\n";
+	buff += "    /~~   ~~\\\n";
+	buff += " /~~         ~~\\\n";
+	buff += "{               }\n";
+	buff += " \\  _-     -_  /\n";
+	buff += "   ~  \\\\ //  ~\n";
+	buff += "_- -   | | _- _\n";
+	buff += "  _ -  | |   -_\n";
+	buff += "......// \\\\......_\n";
+	file << buff;
+	file.close();
+	std::cout << executor.getName() << " executed " << this->getName() << std::endl;
 }
 
 /*

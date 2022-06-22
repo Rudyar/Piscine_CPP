@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:09:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 16:13:05 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 18:15:06 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ void	Bureaucrat::signForm(AForm & form)
 {
 	form.beSigned(*this);
 	std::cout << this->getName() << " signed " << form.getName() << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	form.execute(*this);
 }
 
 /*

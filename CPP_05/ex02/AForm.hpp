@@ -29,14 +29,14 @@ class AForm
 		AForm( AForm const & src );
 		~AForm();
 
-		AForm &		operator=( AForm const & rhs );
-		std::string	getName() const;
-		bool		getSigned() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
-		int			setSignGrade(int i);
-		int			setExecGrade(int i);
-		void		beSigned(Bureaucrat & bureaucrat);
+		AForm &			operator=( AForm const & rhs );
+		std::string		getName() const;
+		bool			getSigned() const;
+		int				getSignGrade() const;
+		int				getExecGrade() const;
+		int				setSignGrade(int i);
+		int				setExecGrade(int i);
+		void			beSigned(Bureaucrat & bureaucrat);
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighExeption : public std::exception

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:10:54 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 17:32:08 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 18:45:00 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,52 @@
 
 int main()
 {
-	ShrubberyCreationForm test;
-	Bureaucrat bu("denis", 137);
-	try
-	{
-		bu.signForm(test);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		test.execute(bu);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	// {
+	// 	std::cout << "---- Shrubbery form test ----" << std::endl;
+	// 	ShrubberyCreationForm forest("Forest");
+	// 	ShrubberyCreationForm garden("Garden");
+	// 	ShrubberyCreationForm mountain("Mountain");
+	// 	Bureaucrat a("Denis", 13);
+	// 	Bureaucrat b("Gerard", 140);
+	// 	Bureaucrat c;
+	// 	try
+	// 	{
+	// 		a.executeForm(forest);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << std::endl;
+	// 	}
+	// 	try
+	// 	{
+	// 		a.signForm(forest);
+	// 		a.executeForm(forest);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << std::endl;
+	// 	}
+	// 	std::cout << std::endl;
+	// 	try
+	// 	{
+	// 		b.signForm(garden);
+	// 		b.executeForm(garden);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << std::endl;
+	// 	}
+	// 	std::cout << std::endl;
+	// 	try
+	// 	{
+	// 		c.signForm(mountain);
+	// 		c.executeForm(mountain);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << std::endl;
+	// 	}
+	// }
+
 	return 0;
 }
