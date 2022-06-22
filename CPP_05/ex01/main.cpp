@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:10:54 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 15:27:28 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 16:23:28 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-	std::cout << "---- Too High Sign Grade test ----" << std::endl;
+	std::cout << std::endl << "---- Too Low Sign Grade test ----" << std::endl;
 	try
 	{
 		Form test("Inscription", 151, 1);
@@ -25,7 +25,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl << "---- Too Low Sign Grade test ----" << std::endl;
+	std::cout << "---- Too High Sign Grade test ----" << std::endl;
 	try
 	{
 		Form test("Inscription", -42, 1);
@@ -35,7 +35,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl << "---- Too High Exec Grade test ----" << std::endl;
+	std::cout << std::endl << "---- Too Low Exec Grade test ----" << std::endl;
 	try
 	{
 		Form test("Inscription", 12, 222222);
@@ -45,7 +45,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl << "---- Too Low Exec Grade test ----" << std::endl;
+	std::cout << std::endl << "---- Too High Exec Grade test ----" << std::endl;
 	try
 	{
 		Form test("Inscription", 12, -222222);

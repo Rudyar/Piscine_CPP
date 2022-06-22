@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:37:00 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 15:20:27 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 16:15:16 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,18 @@ void	Form::beSigned(Bureaucrat & bureaucrat)
 int	Form::setSignGrade(int i)
 {
 	if (i < 1)
-		throw Form::GradeTooLowExeption();
-	else if (i > 150)
 		throw Form::GradeTooHighExeption();
+	else if (i > 150)
+		throw Form::GradeTooLowExeption();
 	return i;
 }
 
 int	Form::setExecGrade(int i)
 {
 	if (i < 1)
-		throw Form::GradeTooLowExeption();
-	else if (i > 150)
 		throw Form::GradeTooHighExeption();
+	else if (i > 150)
+		throw Form::GradeTooLowExeption();
 	return i;
 }
 

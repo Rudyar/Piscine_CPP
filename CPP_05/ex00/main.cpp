@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:10:54 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 15:45:58 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 16:19:31 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	std::cout << "---- Too High test ----" << std::endl;
+	std::cout << std::endl << "---- Too Low test ----" << std::endl;
 	try
 	{
 		Bureaucrat test("Gerard", 151);
@@ -24,7 +24,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl << "---- Too Low test ----" << std::endl;
+	std::cout << "---- Too High test ----" << std::endl;
 	try
 	{
 		Bureaucrat test("Gerard", 0);
@@ -46,7 +46,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl << "---- Increment too low grade ----" << std::endl;
+	std::cout << std::endl << "---- Increment too high grade ----" << std::endl;
 	try
 	{
 		Bureaucrat test("Gerard", 1);
@@ -57,7 +57,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl << "---- Increment too high grade ----" << std::endl;
+	std::cout << std::endl << "---- Increment too low grade ----" << std::endl;
 	try
 	{
 		Bureaucrat test("Gerard", 150);

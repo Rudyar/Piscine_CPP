@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:09:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 15:21:34 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/22 16:15:01 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ int	Bureaucrat::getGrade() const
 void	Bureaucrat::setGrade(int i)
 {
 	if (i < 1)
-		throw Bureaucrat::GradeTooLowExeption();
-	else if (i > 150)
 		throw Bureaucrat::GradeTooHighExeption();
+	else if (i > 150)
+		throw Bureaucrat::GradeTooLowExeption();
 	_grade = i;
 }
 
