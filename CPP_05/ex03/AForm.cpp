@@ -140,4 +140,9 @@ const char*	AForm::NotSignedExeption::what() const throw()
 	return ("Form is not signed !");
 }
 
+const char	*AForm::FormNotFoundExeption::what() const throw()
+{
+	return ("This type of form is not found");
+}
+
 /* ************************************************************************** */

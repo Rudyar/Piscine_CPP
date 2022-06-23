@@ -27,7 +27,7 @@ class AForm
 		AForm();
 		AForm(std::string const name, int sign_grade, int exec_grade);
 		AForm( AForm const & src );
-		~AForm();
+		virtual ~AForm();
 
 		AForm &			operator=( AForm const & rhs );
 		std::string		getName() const;
@@ -58,6 +58,12 @@ class AForm
 		};
 
 		class NotSignedExeption : public std::exception
+		{
+			public:
+				virtual const char*	what() const throw();
+		};
+
+		class FormNotFoundExeption : public std::exception
 		{
 			public:
 				virtual const char*	what() const throw();

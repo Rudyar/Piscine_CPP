@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:10:54 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 19:42:08 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/23 11:40:28 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int main()
 	}
 
 	std::cout << std::endl;
-	
+
 	{
 		std::cout << "---- Presidential Pardon form test ----" << std::endl;
 		PresidentialPardonForm human("Human");

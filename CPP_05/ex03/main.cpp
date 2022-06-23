@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:10:54 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/22 19:42:08 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/23 11:29:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,68 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
+	std::cout << "---- Shrubbery creation form by intern test ----" << std::endl;
+	try
 	{
-		std::cout << "---- Shrubbery form test ----" << std::endl;
-		ShrubberyCreationForm forest("Forest");
-		ShrubberyCreationForm garden("Garden");
-		ShrubberyCreationForm mountain("Mountain");
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << std::endl << "---- Robotomy request form by intern test ----" << std::endl;
+	try
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << std::endl << "---- Presidential pardon form by intern test ----" << std::endl;
+	try
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << std::endl << "---- Bad form by intern test ----" << std::endl;
+	try
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("bloup", "Bender");
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << std::endl << "---- Exec forms test ----" << std::endl;
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
 		Bureaucrat a("Denis", 13);
-		Bureaucrat b("Gerard", 140);
-		Bureaucrat c;
 		try
 		{
-			a.executeForm(forest);
+			a.executeForm(*rrf);
 		}
 		catch(const std::exception& e)
 		{
@@ -36,134 +84,64 @@ int main()
 		}
 		try
 		{
-			a.signForm(forest);
-			a.executeForm(forest);
+			a.signForm(*rrf);
+			a.executeForm(*rrf);
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << std::endl;
-		try
-		{
-			b.signForm(garden);
-			b.executeForm(garden);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		std::cout << std::endl;
-		try
-		{
-			c.signForm(mountain);
-			c.executeForm(mountain);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+		delete rrf;
 	}
-
 	std::cout << std::endl;
-
 	{
-		std::cout << "---- Robotomy Request form test ----" << std::endl;
-		RobotomyRequestForm robot("Robot");
-		RobotomyRequestForm robot1("Robot1");
-		RobotomyRequestForm robot2("Robot2");
-		Bureaucrat a("Denis", 13);
-		Bureaucrat b("Gerard", 60);
-		Bureaucrat c;
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		Bureaucrat a("Denis", 46);
 		try
 		{
-			a.executeForm(robot);
+			a.executeForm(*rrf);
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << std::endl;
 		try
 		{
-			a.signForm(robot);
-			a.executeForm(robot);
+			a.signForm(*rrf);
+			a.executeForm(*rrf);
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << std::endl;
-		try
-		{
-			b.signForm(robot1);
-			b.executeForm(robot1);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		std::cout << std::endl;
-		try
-		{
-			c.signForm(robot2);
-			c.executeForm(robot2);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+		delete rrf;
 	}
-
 	std::cout << std::endl;
-	
 	{
-		std::cout << "---- Presidential Pardon form test ----" << std::endl;
-		PresidentialPardonForm human("Human");
-		PresidentialPardonForm human1("Human1");
-		PresidentialPardonForm human2("Human2");
-		Bureaucrat a("Denis", 1);
-		Bureaucrat b("Gerard", 20);
-		Bureaucrat c;
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		Bureaucrat a("Denis", 100);
 		try
 		{
-			a.executeForm(human);
+			a.executeForm(*rrf);
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << std::endl;
 		try
 		{
-			a.signForm(human);
-			a.executeForm(human);
+			a.signForm(*rrf);
+			a.executeForm(*rrf);
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << std::endl;
-		try
-		{
-			b.signForm(human1);
-			b.executeForm(human1);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		std::cout << std::endl;
-		try
-		{
-			c.signForm(human2);
-			c.executeForm(human2);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+		delete rrf;
 	}
-
 	return 0;
 }

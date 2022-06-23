@@ -6,14 +6,14 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/22 19:52:50 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/23 11:01:09 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= form
 
 SRCS	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp Intern.cpp
+		PresidentialPardonForm.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
