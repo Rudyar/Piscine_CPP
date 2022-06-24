@@ -6,13 +6,13 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/23 19:27:15 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/24 10:27:13 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= convert
 
-SRCS	= main.cpp
+SRCS	= main.cpp Convert.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
