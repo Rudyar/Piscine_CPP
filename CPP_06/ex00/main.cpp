@@ -6,25 +6,32 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 14:56:36 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/24 09:49:22 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/24 11:25:53 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-bool	isChar(std::string s)
+bool	isChar(std::string s) // Pour l'instant check aussi les int < 9
 {
 	if (s.length() > 1)
 		return false;
-	// ?? Auitre chose ?
 	return true;
 }
 
-// bool isInt(std::string s)
-// {
+bool isInt(std::string s)
+{
+	size_t i = 0;
 
-// 	return true;
-// }
+	if (!isdigit(static_cast<int>(s[i])) && s[i] != '-' && s[i] != '+')
+		return false;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	for (; i < s.length(); i++)
+		if (!isdigit(static_cast<int>(s[i])))
+			return false;
+	return true;
+}
 
 int main(int ac, char**av)
 {
@@ -35,8 +42,8 @@ int main(int ac, char**av)
 	}
 	if (isChar(av[1]))
 		convertChar(av[1]);
-	// else if (isInt(av[1]))
-	// 	std::cout << "Is a int" << std::endl;
+	else if (isInt(av[1]))
+		convertInt(av[1]);
 
 
 
