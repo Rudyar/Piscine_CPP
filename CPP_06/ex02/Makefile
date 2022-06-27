@@ -6,13 +6,13 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/27 12:14:50 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/27 13:17:47 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= type
 
-SRCS	= main.cpp Bae.cpp A.cpp B.cpp C.cpp
+SRCS	= main.cpp Base.cpp A.cpp B.cpp C.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 

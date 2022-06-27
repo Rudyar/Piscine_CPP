@@ -6,8 +6,18 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:15:01 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/27 12:16:19 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/27 13:06:17 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "C.hpp"
+
+C::C()
+{
+	std::cout << "C constructor called" << std::endl;
+}
+
+C::~C()
+{
+	std::cout << "C destructor called" << std::endl;
+}

@@ -6,7 +6,18 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:51:04 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/27 11:51:06 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/27 13:05:26 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "B.hpp"
+
+B::B()
+{
+	std::cout << "B constructor called" << std::endl;
+}
+
+B::~B()
+{
+	std::cout << "B destructor called" << std::endl;
+}

@@ -6,7 +6,19 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:50:14 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/27 11:50:15 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/27 13:56:27 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Base.hpp"
+
+int	main(void)
+{
+	Base* base;
+
+	base = generate();
+	identify(base);
+	identify(*base);
+	delete base;
+	return 0;
+}
