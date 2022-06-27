@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:51:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/27 14:22:03 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/27 14:33:34 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include "C.hpp"
 
 /*
-	Dynamic cast car je veux faire des down casts en securité, et donc de tester au run time si
-	j'ai le bon type de Base.
+	Dynamic cast car je veux faire des down casts en securité, et ensuite tester
+	au run time le type de Base que j'ai récup.
 */
 
 Base::~Base()
