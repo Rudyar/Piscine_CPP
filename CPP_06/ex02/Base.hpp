@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.hpp                                      :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 11:30:43 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/27 12:03:54 by arudy            ###   ########.fr       */
+/*   Created: 2022/06/27 11:51:08 by arudy             #+#    #+#             */
+/*   Updated: 2022/06/27 12:12:53 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZE_HPP
-#define SERIALIZE_HPP
+#ifndef BASE_HPP
+#define BASE_H
+
 #include <iostream>
 #include <string>
-#include <stdint.h>
+#include <time.h>
 
-typedef struct s_data
+class Base
 {
-	std::string	name;
-	int			value;
-} Data;
+	public:
+		virtual ~Base();
+};
 
-uintptr_t	serialize(Data* ptr);
-Data*	deserialize(uintptr_t raw);
+Base*	generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
 
 #endif
