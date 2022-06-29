@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 17:12:04 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/28 20:12:41 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/29 11:18:40 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ class Array
 		unsigned int	_size;
 
 	public:
-		Array<T>()
+		Array()
 		{
 			std::cout << "Default constructor called" << std::endl;
 			_array = NULL;
 			_size = 0;
 		};
 
-		Array<T>(unsigned int n)
+		Array(unsigned int n)
 		{
 			std::cout << "With size constructor called" << std::endl;
 			if (n < 1)
@@ -40,21 +40,21 @@ class Array
 			_array = new T[n];
 		};
 
-		Array<T>(Array<T> const & src)
+		Array(Array const & src)
 		{
 			_size = 0;
 			_array = NULL;
 			*this = src;
 		}
 
-		~Array<T>()
+		~Array()
 		{
 			std::cout << "Destructor called" << std::endl;
 			if (_array)
 				delete [] _array;
 		};
 
-		Array<T> &	operator=(Array<T> const & rhs)
+		Array &	operator=(Array const & rhs)
 		{
 			std::cout << "Assignement operator called" << std::endl;
 			if (this != &rhs)

@@ -6,14 +6,13 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 16:13:57 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/28 17:07:17 by arudy            ###   ########.fr       */
+/*   Updated: 2022/06/29 10:56:02 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 
-int
-main( void ) {
+int	main( void ) {
 	int a = 2;
 	int b = 3;
 
