@@ -6,11 +6,11 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/28 17:11:35 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/30 17:59:23 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= array
+NAME	= mutantstack
 
 SRCS	= main.cpp
 
