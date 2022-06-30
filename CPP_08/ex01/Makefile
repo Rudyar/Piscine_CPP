@@ -6,13 +6,13 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 11:33:19 by arudy             #+#    #+#              #
-#    Updated: 2022/06/29 14:46:23 by arudy            ###   ########.fr        #
+#    Updated: 2022/06/30 11:35:24 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= span
 
-SRCS	= main.cpp
+SRCS	= main.cpp Span.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
