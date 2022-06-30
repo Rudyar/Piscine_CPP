@@ -12,7 +12,7 @@ class Span
 	public:
 
 		Span();
-		Span(unsigned int N);
+		Span(unsigned int const N);
 		Span( Span const & src );
 		~Span();
 
@@ -20,6 +20,7 @@ class Span
 		unsigned int		getSize() const;
 		void				displayTab();
 		void				addNumber(int i);
+		void				fillSpan(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int					shortestSpan();
 		int					longestSpan();
 
