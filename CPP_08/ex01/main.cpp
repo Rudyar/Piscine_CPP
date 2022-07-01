@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:46:32 by arudy             #+#    #+#             */
-/*   Updated: 2022/06/30 17:55:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/07/01 16:09:51 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	main(void)
 	std::cout << std::endl << "---- Fill Span test ----" << std::endl;
 	Span bloup(45);
 	Span bloupp;
+
 	bloup.addNumber(1);
 	bloup.addNumber(2);
 	bloup.addNumber(3);
